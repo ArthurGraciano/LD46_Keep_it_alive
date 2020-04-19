@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class metheor : enemy
 {
-public float stopDistance;
+public float stopDistanceMeteor;
 
 //private float attackTime;
 
@@ -16,7 +16,7 @@ public float stopDistance;
         if (player != null)
         {
 
-            if (Vector2.Distance(transform.position, player.position) > stopDistance)
+            if (Vector2.Distance(transform.position, player.position) > stopDistanceMeteor)
             {
                 transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
             }
