@@ -20,7 +20,7 @@ public class planet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        healthAmount = 100;
+        healthAmount = 10;
         rb = GetComponent<Rigidbody2D>();
 
     }
@@ -28,19 +28,13 @@ public class planet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        meteor = GameObject.FindGameObjectWithTag("meteor").transform;
         if (healthAmount <= 0)
         {
-            Instantiate(deathEffect, transform.position, Quaternion.identity);
-
-            Destroy(this.gameObject);
-            Destroy(planetDead);
-            Destroy(cannons);
-            losescreen.SetActive(true);
-           
+            explodePlanet();
         }
+
         Health();
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -51,7 +45,8 @@ public class planet : MonoBehaviour
             hitParticlesClone = Instantiate(hitParticles, transform.position, Quaternion.identity);
             Destroy(hitParticlesClone, 2.0f);
             Destroy(collision.gameObject);
-        }else if (collision.tag.Equals("Item"))
+        }
+        else if (collision.tag.Equals("Item"))
         {
             hitParticlesClone = Instantiate(hitParticles, transform.position, Quaternion.identity);
             Destroy(hitParticlesClone, 2.0f);
@@ -62,8 +57,21 @@ public class planet : MonoBehaviour
 
     private void Health()
     {
-        GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, healthAmount/100f);
+        GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, healthAmount / 100f);
 
         //Debug.Log("color.a: " + GetComponent<SpriteRenderer>().color.a);
     }
-}
+
+    private void explodePlanet()
+    {
+
+        Instantiate(deathEffect, transform.position, Quaternion.identity);
+
+        Destroy(this.gameObject);
+        Destroy(planetDead);
+        Destroy(cannons);
+        losescreen.SetActive(true);
+
+    }
+
+ }
