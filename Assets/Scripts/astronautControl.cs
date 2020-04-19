@@ -30,7 +30,7 @@ public class astronautControl : MonoBehaviour
 
         anim = GetComponent<Animator>();
 
-        waitFor = new WaitForSeconds(5f);
+        waitFor = new WaitForSeconds(2f);
     }
 
     void Update()

@@ -27,15 +27,15 @@ public class bonusItem : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Astronaut").transform;
         transform.position = RespawnPointsList.respawnMethod();
         randomSpawnRange = Random.Range(0, 3);
-        
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(changeDirection());
-
+        //   StartCoroutine(changeDirection());
+        _direction = (directions[randomSpawnRange] - rb.position);
+        rb.MovePosition(rb.position + _direction * speed * Time.fixedDeltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -47,25 +47,26 @@ public class bonusItem : MonoBehaviour
 
         }else if(collision.tag.Equals("bullet Astronaut"))
         {
-            dirChange = true;
+            planet.healthAmount += 10;
             Destroy(collision.gameObject);
+            Destroy(gameObject);
         }
     }
 
-    IEnumerator changeDirection()
-    {   
-        if(dirChange == true) 
-        { 
-        _direction = player.position;
-        rb.MovePosition(rb.position - _direction * speed * Time.fixedDeltaTime);
-            yield return new WaitForSeconds(5f);
-            dirChange = false;
-        }
-        else if(dirChange == false)
-        {
-            _direction = (directions[randomSpawnRange] - rb.position);
-            rb.MovePosition(rb.position + _direction * speed * Time.fixedDeltaTime);
-        }
-    }
+  //  IEnumerator changeDirection()
+  //  {   
+  //      if(dirChange == true) 
+  //      { 
+  //      _direction = player.position;
+  //      rb.MovePosition(rb.position - _direction * speed * Time.fixedDeltaTime);
+  //          yield return new WaitForSeconds(10f);
+  //          dirChange = false;
+  //      }
+  //      else if(dirChange == false)
+  //      {
+  //          _direction = (directions[randomSpawnRange] - rb.position);
+  //          rb.MovePosition(rb.position + _direction * speed * Time.fixedDeltaTime);
+  //      }
+  //  }
 
 }
