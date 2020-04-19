@@ -11,6 +11,7 @@ public class planet : MonoBehaviour
     public Transform meteor;
     public GameObject hitParticles;
     public GameObject deathEffect;
+    public GameObject planetDead;
     private GameObject hitParticlesClone;
 
 
@@ -31,6 +32,7 @@ public class planet : MonoBehaviour
             Instantiate(deathEffect, transform.position, Quaternion.identity);
 
             Destroy(this.gameObject);
+            Destroy(planetDead);
         }
         Health();
         
