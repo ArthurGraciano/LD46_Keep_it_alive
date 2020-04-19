@@ -12,6 +12,7 @@ public class planet : MonoBehaviour
     public GameObject hitParticles;
     public GameObject deathEffect;
     public GameObject planetDead;
+    public GameObject cannons;
     private GameObject hitParticlesClone;
 
 
@@ -33,6 +34,7 @@ public class planet : MonoBehaviour
 
             Destroy(this.gameObject);
             Destroy(planetDead);
+            Destroy(cannons);
         }
         Health();
         
