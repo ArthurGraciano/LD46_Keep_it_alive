@@ -11,7 +11,8 @@ public class gameManager : MonoBehaviour
     public enum State
     {
         astronaut,
-        cannons
+        cannons,
+        tutorial
     };
 
     public void Awake()
@@ -23,12 +24,13 @@ public class gameManager : MonoBehaviour
         }
         else Destroy(gameObject);
 
-        activeChar = State.astronaut;
+        activeChar = State.tutorial;
+        Time.timeScale = 0f;
     }
 
     private void Update()
     {
-        if (Input.GetKeyUp("mouse 1")) { 
+        if (Input.GetKeyUp("mouse 1") && activeChar != State.tutorial) { 
             switch (activeChar)
         {
             case State.astronaut:
@@ -38,9 +40,9 @@ public class gameManager : MonoBehaviour
             case State.cannons:
                     activeChar = State.astronaut;
                 break;
- 
+            }
         }
     }
-    }
+
 }
 
