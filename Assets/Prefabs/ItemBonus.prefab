@@ -168,5 +168,5 @@ MonoBehaviour:
   - {x: -1.57, y: 4.14}
   - {x: 9.57, y: -4.14}
   - {x: -9.57, y: -4.14}
-  speed: 1
+  speed: 0.2
   _direction: {x: 0, y: 0}

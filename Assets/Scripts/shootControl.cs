@@ -6,6 +6,7 @@ public class shootControl : MonoBehaviour
 {
     public static shootControl _shootControl;
     public GameObject Projectile;
+    public GameObject astronautProjectile;
     [SerializeField]
     [Range(1, 100)]
     private float projectileSpeed;
@@ -37,6 +38,14 @@ public class shootControl : MonoBehaviour
         newBullet.GetComponent<Rigidbody2D>().AddRelativeForce(cannonWeaponPivot.position * projectileSpeed, ForceMode2D.Force);
         //_clone_ps = newBullet.GetComponentInChildren<ParticleSystem>();
         //_clone_ps.Play();
+        Destroy(newBullet, 2.0f);
+    }
+
+    public void AstronautShoot(Transform cannonWeaponPivot)
+    {
+
+        GameObject newBullet = Instantiate(astronautProjectile, cannonWeaponPivot.position, transform.rotation);
+        newBullet.GetComponent<Rigidbody2D>().AddRelativeForce(cannonWeaponPivot.position * projectileSpeed, ForceMode2D.Force);
         Destroy(newBullet, 2.0f);
     }
 

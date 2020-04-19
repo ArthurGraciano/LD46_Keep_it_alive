@@ -10,22 +10,27 @@ public class astronautControl : MonoBehaviour
     [SerializeField]
     [Range(50, 250)]
     private float rotationSpeed;
+    private bool canShoot;
     private Quaternion rotation;
 
+    public Transform pivotArma;
     private Transform pivot;
 
     private Animator anim;
+    public GameObject astronautPull;
 
+    private WaitForSeconds waitFor;
 
     void Start()
     {
-        
+        canShoot = true;
         pivot = pivotTransform.transform;
         transform.parent = pivot;
         transform.position += Vector3.up * radius;
 
         anim = GetComponent<Animator>();
 
+        waitFor = new WaitForSeconds(5f);
     }
 
     void Update()
@@ -51,11 +56,26 @@ public class astronautControl : MonoBehaviour
 
         if (gameManager._inst.activeChar == gameManager.State.astronaut && Input.GetKey(KeyCode.Mouse0))
         {
-            anim.SetBool("isShooting", true);
+            if(canShoot == true)    
+            {
+                StartCoroutine(astronautCanShoot());
+            }
         }
         else
         {
             anim.SetBool("isShooting", false);
         }
     }
+
+    IEnumerator astronautCanShoot()
+    {
+        anim.SetBool("isShooting", true);
+        shootControl._shootControl.AstronautShoot(pivotArma);
+        Instantiate(astronautPull, pivotArma, false);
+        canShoot = false;
+        yield return waitFor;
+        canShoot = true;
+
+    }
+
 }

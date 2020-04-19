@@ -11,20 +11,20 @@ public class EndGamePopupManager : MonoBehaviour
     public static float healthAmount;
     void Update()
     {
-        Health();
-         void Health();
-     
+
+
+
         if (healthAmount <= 0)
         {
             Time.timeScale = 0f;
             gameOver.SetActive(true);
         }
 
-        else if (healthAmount >=100)
+        else if (healthAmount >= 100)
         {
             Time.timeScale = 0f;
             gameWin.SetActive(true);
         }
 
-
+    }
     }
