@@ -32,6 +32,7 @@ public class planet : MonoBehaviour
 
             Destroy(this.gameObject);
         }
+        Health();
         
     }
 
@@ -45,5 +46,12 @@ public class planet : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
+    }
+
+    private void Health()
+    {
+        GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, healthAmount/100f);
+
+        //Debug.Log("color.a: " + GetComponent<SpriteRenderer>().color.a);
     }
 }
