@@ -1825,6 +1825,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meteor: {fileID: 0}
+  hitParticles: {fileID: 6391361105103478215, guid: 62eecc8afe78a034c83ab80f70eff8d4,
+    type: 3}
   deathEffect: {fileID: 6488033087129147095, guid: 28897c77ff2b2894d9155d80c1c504d2,
     type: 3}
 --- !u!1 &1867376914

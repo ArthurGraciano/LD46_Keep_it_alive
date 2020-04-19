@@ -36,6 +36,7 @@ public class astronautControl : MonoBehaviour
             pivot.position = pivotTransform.position;
             rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
             pivot.rotation = Quaternion.RotateTowards(transform.rotation, rotation , rotationSpeed * Time.deltaTime);
+
         }
     }
 }

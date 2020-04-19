@@ -41,4 +41,5 @@ public class shootControl : MonoBehaviour
         //_clone_ps.Play();
         Destroy(newBullet, 2.0f);
     }
+
 }

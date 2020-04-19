@@ -9,7 +9,7 @@ public class planet : MonoBehaviour
     public static float healthAmount;
 
     public Transform meteor;
-
+    public GameObject hitParticles;
     public GameObject deathEffect;
 
 
@@ -18,13 +18,13 @@ public class planet : MonoBehaviour
     {
         healthAmount = 1;
         rb = GetComponent<Rigidbody2D>();
-        meteor = GameObject.FindGameObjectWithTag("meteor").transform;
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        meteor = GameObject.FindGameObjectWithTag("meteor").transform;
         if (healthAmount <= 0)
         {
             Instantiate(deathEffect, transform.position, Quaternion.identity);
@@ -39,6 +39,8 @@ public class planet : MonoBehaviour
         if (collision.tag.Equals("meteor"))
         {
             healthAmount -= 0.1f;
+            Instantiate(hitParticles, transform.position, Quaternion.identity);
+            Destroy(collision.gameObject);
         }
 
     }
