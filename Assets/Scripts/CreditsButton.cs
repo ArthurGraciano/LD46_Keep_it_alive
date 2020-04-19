@@ -5,10 +5,12 @@ using UnityEngine.UI;
 
 public class CreditsButton : MonoBehaviour
 {
-    public GameObject Panel;
+    public GameObject PanelMainMenu;
+    public GameObject PanelCredits;
 
     public void PlayCredits()
     {
-        Panel.SetActive(false);
+        PanelMainMenu.SetActive(false);
+        PanelCredits.SetActive(true);
     }
 }
