@@ -15,6 +15,7 @@ public class planet : MonoBehaviour
     public GameObject cannons;
     private GameObject hitParticlesClone;
 
+    public GameObject losescreen;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,8 @@ public class planet : MonoBehaviour
             Destroy(this.gameObject);
             Destroy(planetDead);
             Destroy(cannons);
+            losescreen.SetActive(true);
+           
         }
         Health();
         
