@@ -20,7 +20,7 @@ public class planet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        healthAmount = 100;
+        healthAmount = 50;
         rb = GetComponent<Rigidbody2D>();
 
     }
