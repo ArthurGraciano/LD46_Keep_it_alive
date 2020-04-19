@@ -46,6 +46,11 @@ public class planet : MonoBehaviour
             hitParticlesClone = Instantiate(hitParticles, transform.position, Quaternion.identity);
             Destroy(hitParticlesClone, 2.0f);
             Destroy(collision.gameObject);
+        }else if (collision.tag.Equals("Item"))
+        {
+            hitParticlesClone = Instantiate(hitParticles, transform.position, Quaternion.identity);
+            Destroy(hitParticlesClone, 2.0f);
+            Destroy(collision.gameObject);
         }
 
     }

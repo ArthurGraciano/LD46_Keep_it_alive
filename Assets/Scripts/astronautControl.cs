@@ -17,7 +17,7 @@ public class astronautControl : MonoBehaviour
 
     void Start()
     {
-
+        
         pivot = pivotTransform.transform;
         transform.parent = pivot;
         transform.position += Vector3.up * radius;
@@ -35,7 +35,8 @@ public class astronautControl : MonoBehaviour
 
             pivot.position = pivotTransform.position;
             rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
-            pivot.rotation = Quaternion.RotateTowards(transform.rotation, rotation , rotationSpeed * Time.deltaTime);
+            pivot.rotation = Quaternion.RotateTowards(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+
 
         }
     }

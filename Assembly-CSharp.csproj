@@ -65,17 +65,21 @@
   <ItemGroup>
     <Compile Include="Assets\enemy.cs" />
     <Compile Include="Assets\Scripts\astronautControl.cs" />
+    <Compile Include="Assets\Scripts\bonusItem.cs" />
+    <Compile Include="Assets\Scripts\bonusItem_Spawner.cs" />
     <Compile Include="Assets\Scripts\bullet.cs" />
     <Compile Include="Assets\Scripts\cannonControl.cs" />
     <Compile Include="Assets\Scripts\CloseButton.cs" />
     <Compile Include="Assets\Scripts\CreditsButton.cs" />
     <Compile Include="Assets\Scripts\gameManager.cs" />
     <Compile Include="Assets\Scripts\Healthbar.cs" />
+    <Compile Include="Assets\Scripts\MenuButton.cs" />
     <Compile Include="Assets\Scripts\metheor.cs" />
     <Compile Include="Assets\Scripts\Monster_spawner.cs" />
     <Compile Include="Assets\Scripts\planet.cs" />
     <Compile Include="Assets\Scripts\PlayButton.cs" />
     <Compile Include="Assets\Scripts\RespawnPointsList.cs" />
+    <Compile Include="Assets\Scripts\RetryButton.cs" />
     <Compile Include="Assets\Scripts\shootControl.cs" />
     <Compile Include="Assets\Scripts\tutorial.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />

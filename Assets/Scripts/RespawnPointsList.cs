@@ -31,10 +31,10 @@ public class RespawnPointsList : MonoBehaviour {
     static void shuffleRespawnPoints()
     {
         respawnPointsList.Clear();
-        respawnPointsList.Add(new Vector3(-3, Random.Range(-5, 5), 0));
-        respawnPointsList.Add(new Vector3(3, Random.Range(-5, 5), 0));
-        respawnPointsList.Add(new Vector3(Random.Range(-3, 3), 5, 0));
-        respawnPointsList.Add(new Vector3(Random.Range(-3, 3), -5, 0));
+        respawnPointsList.Add(new Vector3(-14, Random.Range(6, 10), 0));
+        respawnPointsList.Add(new Vector3(3, Random.Range(-6, -10), 0));
+        respawnPointsList.Add(new Vector3(Random.Range(-14, 3), 6, 0));
+        respawnPointsList.Add(new Vector3(Random.Range(-14, 3), -6, 0));
 
     }
 

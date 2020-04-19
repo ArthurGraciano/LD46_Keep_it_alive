@@ -32,8 +32,6 @@ public class shootControl : MonoBehaviour
 
     public void CannonShoot(Transform cannonWeaponPivot)
     {
-        
-            
 
         GameObject newBullet = Instantiate(Projectile, cannonWeaponPivot.position, transform.rotation);
         newBullet.GetComponent<Rigidbody2D>().AddRelativeForce(cannonWeaponPivot.position * projectileSpeed, ForceMode2D.Force);
