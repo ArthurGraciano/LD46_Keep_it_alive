@@ -19,12 +19,17 @@ public class Monster_spawner : MonoBehaviour
 
     void SpawnAMonster()
     {
+        float randomScale = Random.Range(2f, 5f);
+        randomScale = ((int)randomScale) / 10f;
+
         if (spawnAllowed)
         {
             randomSpawnPoint = Random.Range(0, spawnPoints.Length);
             randomMonster = Random.Range(0, monsters.Length);
-            Instantiate(monsters[randomMonster], spawnPoints[randomSpawnPoint].position,
+            GameObject met = Instantiate(monsters[randomMonster], spawnPoints[randomSpawnPoint].position,
                 Quaternion.identity);
+
+            met.transform.localScale = new Vector3(randomScale, randomScale, randomScale);
         }
 
     }
