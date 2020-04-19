@@ -20,7 +20,11 @@ public class planet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+<<<<<<< HEAD
         healthAmount = 10;
+=======
+        healthAmount = 50;
+>>>>>>> 115a6b8e8b47d3f5b377151685811c685cbd7d2c
         rb = GetComponent<Rigidbody2D>();
 
     }
@@ -48,8 +52,7 @@ public class planet : MonoBehaviour
         }
         else if (collision.tag.Equals("Item"))
         {
-            hitParticlesClone = Instantiate(hitParticles, transform.position, Quaternion.identity);
-            Destroy(hitParticlesClone, 2.0f);
+
             Destroy(collision.gameObject);
         }
 
