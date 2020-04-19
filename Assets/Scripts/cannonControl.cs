@@ -27,6 +27,9 @@ public class cannonControl : MonoBehaviour
     private WaitForSeconds waitFor;
 
 
+    private Animator anim;
+
+
     void Start()
     {
         automaticShoot = false;
@@ -34,6 +37,8 @@ public class cannonControl : MonoBehaviour
         pivot = cannonPivot.transform;
         transform.parent = pivot;
         transform.position += Vector3.up * radius;
+
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -50,12 +55,22 @@ public class cannonControl : MonoBehaviour
             pivot.rotation = Quaternion.RotateTowards(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
 
             shootBehaviour();
+                       
         }
 
-       // if (automaticShoot == true)
-       // {
-        //    StartCoroutine(Shoot());
-        //}
+    }
+
+    private void FixedUpdate()
+    {
+
+        if (gameManager._inst.activeChar == gameManager.State.cannons && Input.GetKey(KeyCode.Mouse0))
+        {
+            anim.SetBool("isShooting", true);
+        }
+        else
+        {
+            anim.SetBool("isShooting", false);
+        }
     }
 
 

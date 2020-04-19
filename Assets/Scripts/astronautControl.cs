@@ -14,6 +14,8 @@ public class astronautControl : MonoBehaviour
 
     private Transform pivot;
 
+    private Animator anim;
+
 
     void Start()
     {
@@ -21,6 +23,9 @@ public class astronautControl : MonoBehaviour
         pivot = pivotTransform.transform;
         transform.parent = pivot;
         transform.position += Vector3.up * radius;
+
+        anim = GetComponent<Animator>();
+
     }
 
     void Update()
@@ -38,6 +43,19 @@ public class astronautControl : MonoBehaviour
             pivot.rotation = Quaternion.RotateTowards(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
 
 
+        }
+
+    }
+    private void FixedUpdate()
+    {
+
+        if (gameManager._inst.activeChar == gameManager.State.astronaut && Input.GetKey(KeyCode.Mouse0))
+        {
+            anim.SetBool("isShooting", true);
+        }
+        else
+        {
+            anim.SetBool("isShooting", false);
         }
     }
 }
