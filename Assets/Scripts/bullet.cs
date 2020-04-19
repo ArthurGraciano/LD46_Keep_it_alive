@@ -7,6 +7,7 @@ public class bullet : MonoBehaviour
     // Start is called before the first frame update
 
     public GameObject particles;
+    private GameObject destroyPs;
     void Start()
     {
         
@@ -23,8 +24,11 @@ public class bullet : MonoBehaviour
         if (collision.tag.Equals("meteor"))
         {
             Destroy(collision.gameObject);
+            destroyPs = Instantiate(particles, transform.position, Quaternion.identity) as GameObject;
+            Destroy(destroyPs, 2.0f);
             Destroy(gameObject);
-            Instantiate(particles, transform.position, Quaternion.identity);
+            
+            
         }
 
     }

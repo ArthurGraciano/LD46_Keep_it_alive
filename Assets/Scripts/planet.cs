@@ -11,12 +11,13 @@ public class planet : MonoBehaviour
     public Transform meteor;
     public GameObject hitParticles;
     public GameObject deathEffect;
+    private GameObject hitParticlesClone;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        healthAmount = 1;
+        healthAmount = 100;
         rb = GetComponent<Rigidbody2D>();
 
     }
@@ -38,8 +39,9 @@ public class planet : MonoBehaviour
     {
         if (collision.tag.Equals("meteor"))
         {
-            healthAmount -= 0.1f;
-            Instantiate(hitParticles, transform.position, Quaternion.identity);
+            healthAmount -= 5f;
+            hitParticlesClone = Instantiate(hitParticles, transform.position, Quaternion.identity);
+            Destroy(hitParticlesClone, 2.0f);
             Destroy(collision.gameObject);
         }
 
