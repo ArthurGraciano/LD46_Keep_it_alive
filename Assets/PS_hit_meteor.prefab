@@ -4823,7 +4823,7 @@ GameObject:
   - component: {fileID: 6376065941742593564}
   - component: {fileID: 4354859654808980600}
   m_Layer: 0
-  m_Name: PS_hit_comet
+  m_Name: PS_hit_meteor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
