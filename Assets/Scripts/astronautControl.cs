@@ -37,7 +37,7 @@ public class astronautControl : MonoBehaviour
 
         anim = GetComponent<Animator>();
 
-        waitFor = new WaitForSeconds(2f);
+        waitFor = new WaitForSeconds(0.8f);
 
         StartCoroutine(astronautFlipper());
     }
