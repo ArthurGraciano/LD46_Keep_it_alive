@@ -8,6 +8,7 @@ public class planet : MonoBehaviour
 
     Rigidbody2D rb;
     public static float healthAmount;
+    public static int levelEnded;
 
     public Transform meteor;
     public GameObject hitParticles;
@@ -27,7 +28,8 @@ public class planet : MonoBehaviour
     void Start()
     {
         deathEffectPlay = true;
-        healthAmount = 50;
+        healthAmount = 96;
+        levelEnded = 0;
 
         rb = GetComponent<Rigidbody2D>();
 
@@ -40,12 +42,14 @@ public class planet : MonoBehaviour
         {
             ExplodePlanet();
             endGameValue = 0;
+            levelEnded = 1;
             StartCoroutine(popupDelay(new WaitForSeconds(2.5f)));
         }
         else if (healthAmount >= 100)
         {
             StartCoroutine(popupDelay(new WaitForSeconds(2.5f)));
             endGameValue = 1;
+            levelEnded = 1;
 
         }
 

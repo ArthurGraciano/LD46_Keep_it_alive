@@ -32,7 +32,7 @@ public class enemy : MonoBehaviour
 
     private void Update()
     {
-        if (player != null)
+        if (player != null && planet.levelEnded==0)
         {
 
             if (Vector2.Distance(transform.position, player.position) > stopDistance)

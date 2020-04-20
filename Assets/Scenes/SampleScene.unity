@@ -2928,11 +2928,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 711727268870395097, guid: 10b90b537af37e94db3a90d6c21b9e8e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2420363162273000481, guid: 10b90b537af37e94db3a90d6c21b9e8e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3043,21 +3038,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameOver
       objectReference: {fileID: 0}
-    - target: {fileID: 2420363162273000493, guid: 10b90b537af37e94db3a90d6c21b9e8e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2420363162273000494, guid: 10b90b537af37e94db3a90d6c21b9e8e,
         type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1726352581}
-    - target: {fileID: 2420363162273000495, guid: 10b90b537af37e94db3a90d6c21b9e8e,
-        type: 3}
-      propertyPath: m_UiScaleMode
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10b90b537af37e94db3a90d6c21b9e8e, type: 3}
 --- !u!1 &1726352579
@@ -3994,6 +3979,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: planet_alive_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2888137167530840990, guid: cdab23b876862dd4eb8ed708e9490d7c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2888137167530840991, guid: cdab23b876862dd4eb8ed708e9490d7c,
         type: 3}

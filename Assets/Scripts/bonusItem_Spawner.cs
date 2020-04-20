@@ -18,7 +18,7 @@ public class bonusItem_Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(spawnAllowed == true && planet.healthAmount > 0)
+        if(spawnAllowed == true && planet.levelEnded == 0)
         {
             StartCoroutine(RespawnControl());
             
