@@ -171,6 +171,8 @@ MonoBehaviour:
   - {x: -9.57, y: -4.14}
   speed: 0.2
   _direction: {x: 0, y: 0}
+  healEffect: {fileID: 5590836848671357947, guid: 78a2874da19cae44eba81e0a44037359,
+    type: 3}
 --- !u!1001 &8862241288252354228
 PrefabInstance:
   m_ObjectHideFlags: 0

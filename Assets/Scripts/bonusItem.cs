@@ -18,6 +18,8 @@ public class bonusItem : MonoBehaviour
 
     private bool dirChange;
 
+    public GameObject healEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,11 +44,16 @@ public class bonusItem : MonoBehaviour
     {
         if (collision.tag.Equals("Astronaut"))
         {
+            Instantiate(healEffect, transform.position, Quaternion.identity);
+
             planet.healthAmount += 10;
             Destroy(gameObject);
 
         }else if(collision.tag.Equals("bullet Astronaut"))
         {
+
+            Instantiate(healEffect, transform.position, Quaternion.identity);
+
             planet.healthAmount += 10;
             Destroy(collision.gameObject);
             Destroy(gameObject);
