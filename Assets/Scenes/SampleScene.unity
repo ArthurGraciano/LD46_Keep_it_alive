@@ -1371,8 +1371,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cannonPivot: {fileID: 797663760}
-  rotationSpeed: 50
-  waitTimeToShoot: 0.63
+  rotationSpeed: 80
+  waitTimeToShoot: 0.3
   PivotTransform:
   - {fileID: 1127725109}
   - {fileID: 621711694}
@@ -3843,7 +3843,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2051344221}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06, y: -0.05, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.51268476, y: 0.51268476, z: 0.80107}
   m_Children: []
   m_Father: {fileID: 0}
