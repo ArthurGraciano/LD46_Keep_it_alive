@@ -29,8 +29,8 @@ public class EndGame : MonoBehaviour
         {
             case 1:
                 txtTitle.text = "You won!";
-                txtGameOverDescription.text = "You've saved the planet.";
-                txtResult.text = "We are lucky to have you to keep us alive";
+                txtGameOverDescription.text = "YaaaY! Your Planet is safe!";
+                txtResult.text = "But, can you do it again?";
                 imgLose.gameObject.SetActive(false);
                 imgWin.gameObject.SetActive(true);
                 break;
