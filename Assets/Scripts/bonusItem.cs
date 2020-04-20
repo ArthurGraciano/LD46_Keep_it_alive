@@ -46,7 +46,7 @@ public class bonusItem : MonoBehaviour
         {
             Instantiate(healEffect, transform.position, Quaternion.identity);
 
-            planet.healthAmount += 10;
+            planet.healthAmount += 15;
             Destroy(gameObject);
 
         }else if(collision.tag.Equals("bullet Astronaut"))
@@ -54,7 +54,7 @@ public class bonusItem : MonoBehaviour
 
             Instantiate(healEffect, transform.position, Quaternion.identity);
 
-            planet.healthAmount += 10;
+            planet.healthAmount += 15;
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }
