@@ -190,7 +190,7 @@ MonoBehaviour:
   m_MinSize: {x: 438, y: 372}
   m_MaxSize: {x: 14008, y: 14022}
   vertical: 1
-  controlID: 88
+  controlID: 64
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_MinSize: {x: 438, y: 272}
   m_MaxSize: {x: 14008, y: 10022}
   vertical: 0
-  controlID: 89
+  controlID: 65
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -435,23 +435,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 2ae50000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 0cd5feff4a8effff72fbffffa23300004a3400005ce40000
+      m_SelectedIDs: 8e340000
+      m_LastClickedID: 13454
+      m_ExpandedIDs: d092ffffe2f5ffff72fbffffa2330000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: pivotAstronauta
-        m_OriginalName: pivotAstronauta
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 13218
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 7}
       m_SearchString: 
@@ -497,9 +497,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.1765262, y: -1.2120589, z: -2.0683594}
+    m_Target: {x: -0.4682338, y: -5.5786695, z: -10.421875}
     speed: 2
-    m_Value: {x: -1.1765262, y: -1.2120589, z: -2.0683594}
+    m_Value: {x: -0.4682338, y: -5.5786695, z: -10.421875}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -532,9 +532,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 13.987067
+    m_Target: 26.235409
     speed: 2
-    m_Value: 13.987067
+    m_Value: 26.235409
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -599,20 +599,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Prefabs
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Prefabs
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\Pichau\LD46_Keep_it_alive
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: e0300000
-    m_LastClickedID: 12512
-    m_ExpandedIDs: 00000000aa2d000000ca9a3b
+    m_SelectedIDs: d02f0000
+    m_LastClickedID: 12240
+    m_ExpandedIDs: 00000000ac2d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -640,7 +640,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000aa2d0000
+    m_ExpandedIDs: 00000000ac2d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -668,21 +668,21 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: 583e0000762d0000a42e000046d7ffff7a740000b42800001e2e0000c6370000422f00001a3200006edb0000d6250000da250000da260000dc250000de2500007028000050a3ffffca270000e4280000f4250000182f0000f62b0000d82b0000562c00000e2d0000c23100009c2b00009e2d0000a02d0000842c00002a2e00001a410000422c0000042c0000982b0000cc2d00001c2d0000222e0000742c00009e2b00005a3000006230000042270000943100008a3100005e260000482a0000483700003c5700000c62000052a90000da350000b0430000c2720000e432000000000000086b0000126b0000f6320000
+    m_ExpandedInstanceIDs: 583e0000762d0000a42e000046d7ffff7a740000b42800001e2e0000c6370000422f00001a3200006edb0000d6250000da250000da260000dc250000de2500007028000050a3ffffca270000e4280000f4250000182f0000f62b0000d82b0000562c00000e2d0000c23100009c2b00009e2d0000a02d0000842c00002a2e00001a410000422c0000042c0000982b0000cc2d00001c2d0000222e0000742c00009e2b00005a3000006230000042270000943100008a3100005e260000482a0000483700003c5700000c62000052a90000da350000b0430000c2720000e432000000000000086b0000126b0000f6320000b22e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Dead Astronaut
+      m_OriginalName: Dead Astronaut
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 14150
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_CreateAssetUtility:
@@ -814,7 +814,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 13218
+  m_LastSelectedObjectID: 13454
 --- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -852,7 +852,7 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 100
 --- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52

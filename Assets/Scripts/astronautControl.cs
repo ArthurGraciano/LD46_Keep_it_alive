@@ -8,6 +8,9 @@ public class astronautControl : MonoBehaviour
     public Transform pivotTransform;
     [SerializeField]
     private SpriteRenderer astronaut;
+    [SerializeField]
+    private GameObject deadAstronaut;
+
     private float radius;
     [SerializeField]
     [Range(50, 250)]
@@ -22,9 +25,11 @@ public class astronautControl : MonoBehaviour
     public GameObject astronautPull;
 
     private WaitForSeconds waitFor;
+    private bool isActive;
 
     void Start()
     {
+        isActive = false;
         canShoot = true;
         pivot = pivotTransform.transform;
         transform.parent = pivot;
@@ -39,7 +44,7 @@ public class astronautControl : MonoBehaviour
 
     void Update()
     {
-        if (gameManager._inst.activeChar == gameManager.State.astronaut)
+        if (gameManager._inst.activeChar == gameManager.State.astronaut && planet.levelEnded == 0)
         {
             StartCoroutine(astronautFlipper());
 
@@ -54,13 +59,20 @@ public class astronautControl : MonoBehaviour
 
         }
 
+        if(planet.levelEnded == 1) 
+        {   
+
+            astronautDie();
+
+        }
+
     }
     private void FixedUpdate()
     {
 
         if (gameManager._inst.activeChar == gameManager.State.astronaut && Input.GetKey(KeyCode.Mouse0))
         {
-            if(canShoot == true)    
+            if(canShoot == true && planet.levelEnded != 1)    
             {
                 StartCoroutine(astronautCanShoot());
             }
@@ -90,16 +102,31 @@ public class astronautControl : MonoBehaviour
         if (rot.z > rotT.z && rot.z - rotT.z < 300)
         {
             astronaut.flipX = true;
-            Debug.Log(rot.z - rotT.z);
+            
         }
         else if (rot.z < rotT.z && rot.z - rotT.z > -300)
         {
             astronaut.flipX = false;
-            Debug.Log(rot.z - rotT.z);
+            
 
 
         }
     }
 
+    public void astronautDie()
+    {   
+        if(isActive == false) 
+        { 
+        GameObject deadAstronautClone = Instantiate(deadAstronaut, astronaut.transform.position, Quaternion.identity);
+        deadAstronautClone.AddComponent<Rigidbody2D>();
+        Rigidbody2D rb = deadAstronautClone.GetComponent<Rigidbody2D>();
+         rb.gravityScale = 0;
+        rb.AddForce(Vector2.up, ForceMode2D.Impulse);
+         rb.AddTorque(30f,ForceMode2D.Force);
+        astronaut.enabled = false;
+        isActive = true;
+
+        }
+    }
 
 }

@@ -47,7 +47,6 @@ public class planet : MonoBehaviour
     {
         if (healthAmount <= 0)
         {
-            
 
             ExplodePlanet();
             endGameValue = 0;
