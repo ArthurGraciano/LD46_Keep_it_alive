@@ -64,7 +64,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\EndGamePopupManager.cs" />
-    <Compile Include="Assets\enemy.cs" />
     <Compile Include="Assets\Scripts\astronautBullet.cs" />
     <Compile Include="Assets\Scripts\astronautControl.cs" />
     <Compile Include="Assets\Scripts\bonusItem.cs" />
@@ -73,6 +72,8 @@
     <Compile Include="Assets\Scripts\cannonControl.cs" />
     <Compile Include="Assets\Scripts\CloseButton.cs" />
     <Compile Include="Assets\Scripts\CreditsButton.cs" />
+    <Compile Include="Assets\Scripts\EndGame.cs" />
+    <Compile Include="Assets\Scripts\enemy.cs" />
     <Compile Include="Assets\Scripts\gameManager.cs" />
     <Compile Include="Assets\Scripts\Healthbar.cs" />
     <Compile Include="Assets\Scripts\MenuButton.cs" />

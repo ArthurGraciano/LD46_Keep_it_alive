@@ -24,15 +24,22 @@ public class planet : MonoBehaviour
 
     private bool deathEffectPlay;
 
+    //timer
+    [SerializeField]
+    private Text lvlDurationTxt;
+    private float lvlDurationTime;
+
     // Start is called before the first frame update
     void Start()
     {
+        lvlDurationTime = Time.time;
         deathEffectPlay = true;
         healthAmount = 50;
         levelEnded = 0;
 
         rb = GetComponent<Rigidbody2D>();
 
+        StartCoroutine(timeCounter());
     }
 
     // Update is called once per frame
@@ -40,6 +47,8 @@ public class planet : MonoBehaviour
     {
         if (healthAmount <= 0)
         {
+            
+
             ExplodePlanet();
             endGameValue = 0;
             levelEnded = 1;
@@ -149,6 +158,19 @@ public class planet : MonoBehaviour
 
     }
 
+    IEnumerator timeCounter()
+    {
+        
+        while (levelEnded == 0) 
+        {
+            float t = Time.time - lvlDurationTime;
+            string minutes = ((int)t / 60).ToString();
+            string seconds = (t % 60).ToString("f0");
+            lvlDurationTxt.text = minutes + "m " + seconds +"s";
+        yield return new WaitForSeconds(1f);
+        }
+        
+    }
 
  }
     
