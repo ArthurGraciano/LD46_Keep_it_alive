@@ -39,7 +39,7 @@ public class astronautControl : MonoBehaviour
 
         waitFor = new WaitForSeconds(0.5f);
 
-        StartCoroutine(astronautFlipper());
+        
     }
 
     void Update()
@@ -59,7 +59,7 @@ public class astronautControl : MonoBehaviour
 
         }
 
-        if(planet.levelEnded == 1) 
+        if(planet.levelEnded == 1 && planet.endGameValue == 0) 
         {   
 
             astronautDie();

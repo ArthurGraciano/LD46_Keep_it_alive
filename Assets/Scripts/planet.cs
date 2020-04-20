@@ -18,7 +18,7 @@ public class planet : MonoBehaviour
     public GameObject[] planetImprovements;
     private GameObject hitParticlesClone;
     private int improvementNumber = 0;
-    private int endGameValue = 0;
+    public static int endGameValue = 0;
 
     public GameObject losescreen;
 
