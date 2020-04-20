@@ -17,14 +17,14 @@ public class planet : MonoBehaviour
 
     public GameObject losescreen;
 
+    private bool deathEffectPlay;
+
     // Start is called before the first frame update
     void Start()
     {
-<<<<<<< HEAD
-        healthAmount = 10;
-=======
+        deathEffectPlay = true;
         healthAmount = 50;
->>>>>>> 115a6b8e8b47d3f5b377151685811c685cbd7d2c
+
         rb = GetComponent<Rigidbody2D>();
 
     }
@@ -34,7 +34,8 @@ public class planet : MonoBehaviour
     {
         if (healthAmount <= 0)
         {
-            explodePlanet();
+
+            StartCoroutine(popupDelay(new WaitForSeconds(5f)));
         }
 
         Health();
@@ -67,14 +68,27 @@ public class planet : MonoBehaviour
 
     private void explodePlanet()
     {
+        if (deathEffectPlay == true)
+        {
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
+            deathEffectPlay = false;
+        }
 
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
-
-        Destroy(this.gameObject);
+        SpriteRenderer.Destroy(planetDead);
+        //Destroy(gameObject);
         Destroy(planetDead);
         Destroy(cannons);
-        losescreen.SetActive(true);
 
     }
 
- }
+    IEnumerator popupDelay(WaitForSeconds waitFor)
+    {
+
+        explodePlanet();
+
+        yield return waitFor;
+        losescreen.SetActive(true);
+        StopCoroutine("popupDelay");
+    }
+
+}
