@@ -28,7 +28,7 @@ public class planet : MonoBehaviour
     void Start()
     {
         deathEffectPlay = true;
-        healthAmount = 96;
+        healthAmount = 50;
         levelEnded = 0;
 
         rb = GetComponent<Rigidbody2D>();
