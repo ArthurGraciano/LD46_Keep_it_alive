@@ -3370,7 +3370,7 @@ GameObject:
   - component: {fileID: 1856831855}
   - component: {fileID: 1856831854}
   - component: {fileID: 1856831856}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Planeta
   m_TagString: Player
   m_Icon: {fileID: 0}

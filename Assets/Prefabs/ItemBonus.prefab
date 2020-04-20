@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1099873805624266313}
   - component: {fileID: 1099873805624266312}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: star_img
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 1099873805796133666}
   - component: {fileID: 1099873805796133667}
   - component: {fileID: 1099873805796133668}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ItemBonus
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -282,6 +282,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PS_trail_commet
+      objectReference: {fileID: 0}
+    - target: {fileID: 6049827853479906670, guid: 6ad836175264ce14e8535fac2f3e4369,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ad836175264ce14e8535fac2f3e4369, type: 3}
