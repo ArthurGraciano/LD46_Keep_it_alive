@@ -2680,6 +2680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pivotTransform: {fileID: 307319944}
+  astronaut: {fileID: 1352165099}
   rotationSpeed: 50
   pivotArma: {fileID: 1436446242}
   astronautPull: {fileID: 5590836848671357947, guid: 84777ca17fc982a42890360b19563521,

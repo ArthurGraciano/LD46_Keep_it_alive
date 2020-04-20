@@ -6,6 +6,8 @@ public class astronautControl : MonoBehaviour
 {
 
     public Transform pivotTransform;
+    [SerializeField]
+    private SpriteRenderer astronaut;
     private float radius;
     [SerializeField]
     [Range(50, 250)]
@@ -31,13 +33,15 @@ public class astronautControl : MonoBehaviour
         anim = GetComponent<Animator>();
 
         waitFor = new WaitForSeconds(2f);
+
+        StartCoroutine(astronautFlipper());
     }
 
     void Update()
     {
         if (gameManager._inst.activeChar == gameManager.State.astronaut)
         {
-            
+            StartCoroutine(astronautFlipper());
 
             Vector3 orbVector = Camera.main.WorldToScreenPoint(pivotTransform.position);
             orbVector = (Input.mousePosition - orbVector);
@@ -77,5 +81,25 @@ public class astronautControl : MonoBehaviour
         canShoot = true;
 
     }
+
+    IEnumerator astronautFlipper()
+    {
+        Vector3 rot = pivot.rotation.eulerAngles;
+        yield return new WaitForSeconds(0.2f);
+        Vector3 rotT = pivot.rotation.eulerAngles;
+        if (rot.z > rotT.z && rot.z - rotT.z < 300)
+        {
+            astronaut.flipX = true;
+            Debug.Log(rot.z - rotT.z);
+        }
+        else if (rot.z < rotT.z && rot.z - rotT.z > -300)
+        {
+            astronaut.flipX = false;
+            Debug.Log(rot.z - rotT.z);
+
+
+        }
+    }
+
 
 }
