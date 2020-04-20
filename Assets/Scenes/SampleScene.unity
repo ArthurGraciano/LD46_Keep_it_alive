@@ -3866,6 +3866,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: planet_alive_3
       objectReference: {fileID: 0}
+    - target: {fileID: 484489562050164101, guid: 37e22b361502dfb408735102405ff36f,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 484489562050164122, guid: 37e22b361502dfb408735102405ff36f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3990,6 +3995,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: planet_alive_4
       objectReference: {fileID: 0}
+    - target: {fileID: 2888137167530840991, guid: cdab23b876862dd4eb8ed708e9490d7c,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdab23b876862dd4eb8ed708e9490d7c, type: 3}
 --- !u!1001 &7838495590974794971
@@ -4052,6 +4062,26 @@ PrefabInstance:
     - target: {fileID: 7838495590108035580, guid: 5e9af65802ffee94889d68971d7760ed,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838495590108035581, guid: 5e9af65802ffee94889d68971d7760ed,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838495590108035581, guid: 5e9af65802ffee94889d68971d7760ed,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838495590108035581, guid: 5e9af65802ffee94889d68971d7760ed,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838495590108035581, guid: 5e9af65802ffee94889d68971d7760ed,
+        type: 3}
+      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7838495590108035582, guid: 5e9af65802ffee94889d68971d7760ed,
@@ -4127,6 +4157,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: planet_alive_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032788510017452153, guid: 84248980c4c5a4849bc4aa68397eb153,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84248980c4c5a4849bc4aa68397eb153, type: 3}

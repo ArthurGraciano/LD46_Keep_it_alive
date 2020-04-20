@@ -17,13 +17,18 @@ public class planet : MonoBehaviour
     public GameObject[] planetImprovements;
     private GameObject hitParticlesClone;
     private int improvementNumber = 0;
+    private int endGameValue = 0;
 
     public GameObject losescreen;
+
+    private bool deathEffectPlay;
 
     // Start is called before the first frame update
     void Start()
     {
-        healthAmount = 90;
+        deathEffectPlay = true;
+        healthAmount = 50;
+
         rb = GetComponent<Rigidbody2D>();
 
     }
@@ -34,13 +39,14 @@ public class planet : MonoBehaviour
         if (healthAmount <= 0)
         {
             ExplodePlanet();
-            losescreen.SetActive(true);
-            losescreen.gameObject.GetComponent<EndGame>().GameOver(0);
+            endGameValue = 0;
+            StartCoroutine(popupDelay(new WaitForSeconds(2.5f)));
         }
-        else if(healthAmount >= 100)
+        else if (healthAmount >= 100)
         {
-            losescreen.SetActive(true);
-            losescreen.gameObject.GetComponent<EndGame>().GameOver(1);
+            StartCoroutine(popupDelay(new WaitForSeconds(2.5f)));
+            endGameValue = 1;
+
         }
 
         switch (improvementNumber)
@@ -49,14 +55,26 @@ public class planet : MonoBehaviour
                 Health(gameObject.GetComponent<SpriteRenderer>());
                 break;
             default:
-                Health(planetImprovements[improvementNumber-1].GetComponent<SpriteRenderer>());
+                Health(planetImprovements[improvementNumber - 1].GetComponent<SpriteRenderer>());
                 break;
         }
         ImprovePlanet();
 
+        IEnumerator popupDelay(WaitForSeconds waitFor)
+        {
+
+            ExplodePlanet();
+
+            yield return waitFor;
+            losescreen.SetActive(true);
+            losescreen.gameObject.GetComponent<EndGame>().GameOver(endGameValue);
+            StopCoroutine("popupDelay");
+        }
+
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag.Equals("meteor"))
         {
@@ -77,7 +95,7 @@ public class planet : MonoBehaviour
     {
         planetSprite.color = new Color(1f, 1f, 1f, healthAmount / 100f);
 
-        //Debug.Log("color.a: " + GetComponent<SpriteRenderer>().color.a);
+        //Debug.Log("color.a: " + planetSprite.color.a);
     }
 
     private void ImprovePlanet()
@@ -86,45 +104,47 @@ public class planet : MonoBehaviour
         {
             this.gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
             improvementNumber = 1;
-            planetImprovements[improvementNumber-1].SetActive(true);
 
-            if(healthAmount > 60)
+            if (healthAmount > 60)
             {
                 improvementNumber = 2;
-                planetImprovements[improvementNumber-1].SetActive(true);
-
                 if (healthAmount > 70)
                 {
                     improvementNumber = 3;
-                    planetImprovements[improvementNumber-1].SetActive(true);
-
                     if (healthAmount > 80)
                     {
                         improvementNumber = 4;
-                        planetImprovements[improvementNumber-1].SetActive(true);
-
-                        if (healthAmount > 90)
-                        {
-                            improvementNumber = 5;
-                            planetImprovements[improvementNumber - 1].SetActive(true);
-                        }
                     }
                 }
             }
+            if (improvementNumber < planetImprovements.Length)
+            {
+                planetImprovements[improvementNumber].SetActive(false);
+            }
+            planetImprovements[improvementNumber - 1].SetActive(true);
+        }
+        else
+        {
+            improvementNumber = 0;
+            planetImprovements[improvementNumber].SetActive(false);
         }
     }
 
     private void ExplodePlanet()
     {
+        if (deathEffectPlay == true)
+        {
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
+            deathEffectPlay = false;
+        }
 
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
-
-        Destroy(this.gameObject);
+        SpriteRenderer.Destroy(planetDead);
+        //Destroy(gameObject);
         Destroy(planetDead);
         Destroy(cannons);
 
     }
 
-    
 
  }
+    
