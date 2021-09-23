@@ -1,2 +1,3 @@
-# LD46_Keep_it_alive
-Repo for LD 46 gameJam
+# LudumDare 46 Keep it alive!
+Jogo feito para a game jam LD 46.
+Assets não foram feitos por mim.
